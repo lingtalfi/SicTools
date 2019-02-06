@@ -25,7 +25,7 @@ Summary
     - [Example 5: recursion, using a service as parameter](#example-5-recursion-using-a-service-as-parameter)
     - [Example 6: recursion, using a service as nested parameter](#example-6-recursion-using-a-service-as-nested-parameter)
     - [Example 7: recursion, using a service in a service](#example-7-recursion-using-a-service-in-a-service)
-    - [Example 8: recursion, using custom notation](#example-8-using-custom-notation)
+    - [Example 8: recursion, using custom notation](#example-8-recursion-using-custom-notation)
     - [Example 9: bypassing the sic notation](#example-9-bypassing-the-sic-notation)
 
 
@@ -297,8 +297,8 @@ return $s0;"
 
 
 
-Example 8: using custom notation
---------------------------------
+Example 8: recursion using custom notation
+------------------------------------------
 
 Custom notation allows us to extend the sic notation as we please.
 
