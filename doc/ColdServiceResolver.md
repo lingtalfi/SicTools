@@ -27,6 +27,7 @@ Summary
     - [Example 7: recursion, using a service in a service](#example-7-recursion-using-a-service-in-a-service)
     - [Example 8: recursion, using custom notation](#example-8-recursion-using-custom-notation)
     - [Example 9: bypassing the sic notation](#example-9-bypassing-the-sic-notation)
+- [Related](#related)
 
 
 
@@ -423,3 +424,10 @@ return $s0;"
 
 ```
 
+
+
+
+Related
+=======
+
+- [HotServiceResolver](https://github.com/lingtalfi/SicTools/blob/master/doc/HotServiceResolver.md)

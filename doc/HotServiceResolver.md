@@ -23,6 +23,7 @@ Summary
     - [Example 6: recursion, using a service as nested parameter](#example-6-recursion-using-a-service-as-nested-parameter)
     - [Example 7: recursion, using a service in a service](#example-7-recursion-using-a-service-in-a-service)
     - [Example 8: recursion, using custom notation](#example-8-using-custom-notation)
+- [Related](#related)
 
 
 
@@ -458,5 +459,9 @@ object(Animal)#5 (0) {
 
 
 
+Related
+=======
+
+- [ColdServiceResolver](https://github.com/lingtalfi/SicTools/blob/master/doc/ColdServiceResolver.md)
 
 
