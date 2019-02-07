@@ -225,7 +225,7 @@ Class Animal
 
     public function playWith(Toy $toy)
     {
-
+        a("ok");
     }
 }
 
