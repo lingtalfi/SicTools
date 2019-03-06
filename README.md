@@ -4,7 +4,7 @@ SicTools
 
 
 
-Tools for implementing the [sic notation](https://github.com/karayabin/universe-snapshot/blob/master/universe/NotationFan/sic.md) in a php application.
+Tools for implementing the [sic notation](https://github.com/karayabin/universe-snapshot/blob/master/universe/Ling/NotationFan/sic.md) in a php application.
 
 
 This is part of the [universe framework](https://github.com/karayabin/universe-snapshot).
@@ -14,7 +14,7 @@ Install
 ==========
 Using the [uni](https://github.com/lingtalfi/universe-naive-importer) command.
 ```bash
-uni import SicTools
+uni import Ling/SicTools
 ```
 
 Or just download it and place it where you want otherwise.

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace SicTools;
+namespace Ling\SicTools;
 
 
-use ArrayToString\ArrayToStringTool;
-use SicTools\CodeBlock\CodeBlock;
+use Ling\ArrayToString\ArrayToStringTool;
+use Ling\SicTools\CodeBlock\CodeBlock;
 
 /**
  * The ColdServiceResolver class helps creating a cold (aka static) service container: a service container

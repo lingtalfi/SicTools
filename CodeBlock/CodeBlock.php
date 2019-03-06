@@ -1,6 +1,6 @@
 <?php
 
-namespace SicTools\CodeBlock;
+namespace Ling\SicTools\CodeBlock;
 
 
 /**

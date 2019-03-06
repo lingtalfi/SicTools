@@ -1,6 +1,6 @@
 <?php
 
-namespace SicTools\Exception;
+namespace Ling\SicTools\Exception;
 
 
 /**

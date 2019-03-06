@@ -1,10 +1,10 @@
 <?php
 
 
-namespace SicTools;
+namespace Ling\SicTools;
 
 
-use SicTools\Exception\SicBlockWillNotResolveException;
+use Ling\SicTools\Exception\SicBlockWillNotResolveException;
 
 /**
  * The HotServiceResolver class helps creating a hot service container: a service container which resolves services
