@@ -41,6 +41,10 @@ Summary
 History Log
 ------------------
 
+- 1.2.0 -- 2019-04-05
+
+    - add SicFileCombinerUtil class
+    
 - 1.1.0 -- 2019-02-07
 
     - add callable notation interpretation for SicTools\HotServiceResolver and SicTools\ColdServiceResolver
