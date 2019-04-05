@@ -41,6 +41,10 @@ Summary
 History Log
 ------------------
 
+- 1.2.1 -- 2019-04-05
+
+    - fix ColdServiceResolver not turning associative arrays into numerical arrays when calling them as constructor/method arguments
+    
 - 1.2.0 -- 2019-04-05
 
     - add SicFileCombinerUtil class
