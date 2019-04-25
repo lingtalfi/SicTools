@@ -13,7 +13,37 @@ use Ling\SicTools\Exception\SicToolsException;
 /**
  * The SicFileCombinerUtil class.
  *
- * The idea of a "combiner" is that the configuration array is broken into multiple files.
+ *
+ * Overview
+ * =========
+ * Prerequisites: Know what the @page(sic notation) is.
+ *
+ * The goal of the sic combiner (this class) is to provide a sic array (i.e. an array using the sic notation),
+ * which usually serves as the configuration of a service container.
+ *
+ * However with the sic combiner, you can merge multiple sic configuration files altogether to create one united big sic array.
+ * So the sic combiner is like a blender in which you can put all your configuration files, and you get one combined sic array
+ * in the end.
+ *
+ * Now because multiple files are merged together, they kind of communicate with each other.
+ * And so the sic combiner provides some features to organize this communication.
+ *
+ *
+ * Be aware that the sic combiner works at the array level, BEFORE the sic notation is actually processed.
+ * In other words, you start with multiple @page(babyYaml) files which basically contain arrays,
+ * you assemble them using the sic combiner, which in the end gives you one big array.
+ *
+ * Once you have this big array, you can interpret it as a sic array to feed your service container, but this
+ * last step is outside the scope of the sic combiner object: the sic combiner only merges arrays together, and is
+ * not aware of the sic notation.
+ *
+ *
+ *
+ *
+ * Sic combiner features
+ * =========
+ * So again, the idea of a "combiner" is that the configuration array is broken into multiple files.
+ *
  * Typically, this is what happens naturally in an environment with plugins: each plugin brings
  * a part of the configuration in the form of one or multiple files; each plugin owns one or more files.
  *
@@ -43,7 +73,7 @@ use Ling\SicTools\Exception\SicToolsException;
  *
  *
  * Lazy override variables
- * ============
+ * ---------
  *
  * Ams is a variant based upon the arrayMergeReplaceRecursive algorithm; its goal is to address some limitations
  * of the arrayMergeReplaceRecursive algorithm.
@@ -139,7 +169,7 @@ use Ling\SicTools\Exception\SicToolsException;
  *
  *
  * Variable references
- * ============
+ * -------
  *
  * A variable reference is just a reference to a (previously declared) lazy override variable.
  * *
