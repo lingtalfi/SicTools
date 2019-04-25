@@ -31,7 +31,7 @@ use Ling\SicTools\Exception\SicToolsException;
  * The exception being you can't override a numerical key (which indicates a numeric array which always calls for
  * a merge operation).
  *
- * See the @ref(ArrayTool::arrayMergeReplaceRecursive) method for more info.
+ * See the @page(ArrayTool::arrayMergeReplaceRecursive) method for more info.
  *
  * Apart from providing that default algorithm, the extra-value brought by this combiner is that it allows syntax additions.
  *
