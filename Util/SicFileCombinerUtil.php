@@ -381,24 +381,31 @@ class SicFileCombinerUtil
                 if (is_string($v)) {
                     if (false !== strpos($v, $this->variableSymbol . '{')) {
                         if (preg_match('!\\' . $this->variableSymbol . '\{([^\}]+)\}!', $v, $match)) {
-                            $dotPathsWithVars[$match[1]] = $dotPath;
+
+                            $varName = $match[1];
+                            if (array_key_exists($varName, $this->environmentVariables)) {
+                                $replace = $this->environmentVariables[$varName];
+                                if (is_string($replace)) {
+                                    $v = str_replace('${' . $varName . '}', $replace, $v);
+                                } else {
+                                    /**
+                                     * It's probably an array
+                                     */
+                                    throw new SicToolsException("SicFileCombinerUtil: environment variables cannot be arrays."); // for now
+                                }
+                            } else {
+                                $dotPathsWithVars[$match[1]] = $dotPath;
+                            }
                         }
                     }
                 }
             });
 
 
-
             foreach ($dotPathsWithVars as $src => $target) {
 
-
-                if (array_key_exists($src, $this->environmentVariables)) {
-                    $srcFound = true;
-                    $srcValue = $this->environmentVariables[$src];
-                } else {
-                    $srcFound = false;
-                    $srcValue = BDotTool::getDotValue($src, $ret, null, $srcFound);
-                }
+                $srcFound = false;
+                $srcValue = BDotTool::getDotValue($src, $ret, null, $srcFound);
 
 
                 if (true === $srcFound) {

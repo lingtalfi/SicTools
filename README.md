@@ -43,6 +43,10 @@ Summary
 History Log
 ------------------
 
+- 1.4.2 -- 2019-04-25
+
+    - fix SicFileCombinerUtil->combine method handling environment variables incorrectly
+    
 - 1.4.1 -- 2019-04-25
 
     - add docTools doc
