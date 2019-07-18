@@ -43,6 +43,10 @@ Summary
 History Log
 ------------------
 
+- 1.4.5 -- 2019-07-18
+
+    - update docTools documentation, add links to source code for classes and methods
+    
 - 1.4.4 -- 2019-07-17
 
     - fix SicFileCombinerUtil.combine method not merging lazy variables correctly
