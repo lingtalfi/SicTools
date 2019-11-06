@@ -144,10 +144,18 @@ class ColdServiceResolver
         if (is_array($constructorArgs) && $constructorArgs) {
             $realArgs = $this->resolveArgs(array_values($constructorArgs));
             $args = $this->argsToString($realArgs);
-
         }
 
-        $s = '$' . $varName . " = new $className($args);";
+
+        $customNotation = $this->resolveCustomNotation($className, $isCustom);
+        if (true === $isCustom) {
+            $varValue = $this->decode($customNotation);
+        } else {
+            $varValue = "new $className($args)";
+        }
+
+
+        $s = '$' . $varName . " = $varValue;";
         $code->addStatement($s);
 
 
@@ -188,6 +196,7 @@ class ColdServiceResolver
                         if (empty($args)) { // same note as previous block
                             $args = [];
                         }
+
 
                         $realArgs = $this->resolveArgs(array_values($args));
                         $args = $this->argsToString($realArgs);
@@ -333,6 +342,16 @@ class ColdServiceResolver
         return '__Sic_Cold_Eval_' . $expression . '__>E<nd';
     }
 
+    /**
+     * Decodes the encoded expression and returns the result.
+     *
+     * @param string $expression
+     * @return string
+     */
+    protected function decode(string $expression): string
+    {
+        return preg_replace('!__Sic_Cold_Eval_(.*?)__>E<nd!', '\1', $expression);
+    }
 
     /**
      * Returns a unique variable name, based on the baseVariableName.

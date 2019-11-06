@@ -43,6 +43,10 @@ Summary
 History Log
 ------------------
 
+- 1.5.0 -- 2019-11-06
+
+    - the instance property now accepts custom notation
+    
 - 1.4.5 -- 2019-07-18
 
     - update docTools documentation, add links to source code for classes and methods

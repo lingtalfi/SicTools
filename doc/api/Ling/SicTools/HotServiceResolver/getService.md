@@ -62,7 +62,7 @@ When the sic block will not resolve
 
 Source Code
 ===========
-See the source code for method [HotServiceResolver::getService](https://github.com/lingtalfi/SicTools/blob/master/HotServiceResolver.php#L65-L171)
+See the source code for method [HotServiceResolver::getService](https://github.com/lingtalfi/SicTools/blob/master/HotServiceResolver.php#L65-L181)
 
 
 See Also

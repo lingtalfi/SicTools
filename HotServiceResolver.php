@@ -83,7 +83,17 @@ class HotServiceResolver
                 }
             } else {
                 try {
-                    $service = new $className();
+
+                    $isCustomNotation = false;
+                    $customNotation = $this->resolveCustomNotation($className, $isCustomNotation);
+                    if (false === $customNotation) {
+                        $service = new $className();
+                    } else {
+                        // assuming an object is returned
+                        $service = $customNotation;
+                    }
+
+
                 } // php7 ?
                 catch (\Error $e) {
                     throw new SicBlockWillNotResolveException($e->getMessage());
