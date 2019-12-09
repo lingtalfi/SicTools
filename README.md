@@ -43,6 +43,10 @@ Summary
 History Log
 ------------------
 
+- 1.5.2 -- 2019-12-09
+
+    - check commit 
+    
 - 1.5.1 -- 2019-12-09
 
     - update HotServiceResolver->getService, now throws an exception if a non callable is passed for the methods or methods_collection property
