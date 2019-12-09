@@ -68,7 +68,7 @@ Returns mixed.
 
 Source Code
 ===========
-See the source code for method [HotServiceResolver::resolveCustomNotation](https://github.com/lingtalfi/SicTools/blob/master/HotServiceResolver.php#L211-L214)
+See the source code for method [HotServiceResolver::resolveCustomNotation](https://github.com/lingtalfi/SicTools/blob/master/HotServiceResolver.php#L222-L225)
 
 
 See Also

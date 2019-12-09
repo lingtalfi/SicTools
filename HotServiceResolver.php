@@ -4,7 +4,9 @@
 namespace Ling\SicTools;
 
 
+use Ling\Bat\DebugTool;
 use Ling\SicTools\Exception\SicBlockWillNotResolveException;
+use Ling\SicTools\Exception\SicToolsException;
 
 /**
  * The HotServiceResolver class helps creating a hot service container: a service container which resolves services
@@ -57,7 +59,7 @@ class HotServiceResolver
      * @param array $sicBlock
      * @return false|object|array
      * False is returned when the given array IS NOT a sic block (or a sic block with the pass key defined)
-     * @throws SicBlockWillNotResolveException
+     * @throws \Exception
      * When the sic block will not resolve
      *
      *
@@ -112,7 +114,12 @@ class HotServiceResolver
                             $args = [];
                         }
                         $realArgs = $this->resolveArgs($args);
-                        call_user_func_array([$service, $methodName], $realArgs);
+                        $callable = [$service, $methodName];
+                        if (true === is_callable($callable)) {
+                            call_user_func_array($callable, $realArgs);
+                        } else {
+                            throw new SicToolsException("Not a callable: " . DebugTool::toString($callable));
+                        }
                     }
                 }
             }
@@ -134,8 +141,12 @@ class HotServiceResolver
                                 $args = [];
                             }
                             $realArgs = $this->resolveArgs($args);
-                            call_user_func_array([$service, $methodName], $realArgs);
-
+                            $callable = [$service, $methodName];
+                            if (true === is_callable($callable)) {
+                                call_user_func_array([$service, $methodName], $realArgs);
+                            } else {
+                                throw new SicToolsException("Not a callable: " . DebugTool::toString($callable));
+                            }
                         }
                     }
                 }

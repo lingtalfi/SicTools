@@ -43,6 +43,10 @@ Summary
 History Log
 ------------------
 
+- 1.5.1 -- 2019-12-09
+
+    - update HotServiceResolver->getService, now throws an exception if a non callable is passed for the methods or methods_collection property
+    
 - 1.5.0 -- 2019-11-06
 
     - the instance property now accepts custom notation
