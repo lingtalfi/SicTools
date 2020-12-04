@@ -44,6 +44,10 @@ Summary
 History Log
 ------------------
 
+- 1.6.1 -- 2020-12-04
+
+    - Add lpi-deps.byml file
+
 - 1.6.0 -- 2020-08-17
 
     - update SicFileCombinerUtil, now handle internal variable references
