@@ -4,7 +4,7 @@
 
 The SicBlockWillNotResolveException class
 ================
-2019-04-25 --> 2020-12-04
+2019-04-25 --> 2020-12-08
 
 
 
