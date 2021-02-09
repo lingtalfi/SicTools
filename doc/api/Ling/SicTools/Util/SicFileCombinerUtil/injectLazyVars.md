@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SicFileCombinerUtil::injectLazyVars](https://github.com/lingtalfi/SicTools/blob/master/Util/SicFileCombinerUtil.php#L497-L537)
+See the source code for method [SicFileCombinerUtil::injectLazyVars](https://github.com/lingtalfi/SicTools/blob/master/Util/SicFileCombinerUtil.php#L499-L539)
 
 
 See Also

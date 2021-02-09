@@ -27,6 +27,7 @@ The target merge/replace syntax described above in this class comments applies.
 
 Available options are:
 
+- recursive: whether to parse the files recursively. If false, only the direct children of the given directory will be parsed.
 - preLazyVars: array of lazyVarItems, each of which:
      - 0: bdot key
      - 1: value
@@ -70,7 +71,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SicFileCombinerUtil::combine](https://github.com/lingtalfi/SicTools/blob/master/Util/SicFileCombinerUtil.php#L372-L483)
+See the source code for method [SicFileCombinerUtil::combine](https://github.com/lingtalfi/SicTools/blob/master/Util/SicFileCombinerUtil.php#L373-L485)
 
 
 See Also

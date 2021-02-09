@@ -36,6 +36,10 @@ Summary
 History Log
 ------------------
 
+- 1.6.4 -- 2021-02-09
+
+    - update SicFileCombinerUtil::combine, recursive feature is now an option
+  
 - 1.6.3 -- 2021-02-09
 
     - update SicFileCombinerUtil::combine, add options argument

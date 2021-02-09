@@ -351,6 +351,7 @@ class SicFileCombinerUtil
      *
      * Available options are:
      *
+     * - recursive: whether to parse the files recursively. If false, only the direct children of the given directory will be parsed.
      * - preLazyVars: array of lazyVarItems, each of which:
      *      - 0: bdot key
      *      - 1: value
@@ -373,12 +374,13 @@ class SicFileCombinerUtil
     {
 
         $preLazyVars = $options['preLazyVars'] ?? [];
+        $recursive = $options['recursive'] ?? true;
 //        $postLazyVars = $options['postLazyVars'] ?? [];
 
 
         $ret = [];
         if (is_dir($directory)) {
-            $files = YorgDirScannerTool::getFilesWithExtension($directory, "byml", false, true, false);
+            $files = YorgDirScannerTool::getFilesWithExtension($directory, "byml", false, $recursive, false);
             $lazyVars = [];
 
             //--------------------------------------------
