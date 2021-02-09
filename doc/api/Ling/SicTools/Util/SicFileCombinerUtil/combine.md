@@ -16,13 +16,24 @@ Description
 ================
 
 
-public [SicFileCombinerUtil::combine](https://github.com/lingtalfi/SicTools/blob/master/doc/api/Ling/SicTools/Util/SicFileCombinerUtil/combine.md)(string $directory) : array
+public [SicFileCombinerUtil::combine](https://github.com/lingtalfi/SicTools/blob/master/doc/api/Ling/SicTools/Util/SicFileCombinerUtil/combine.md)(string $directory, ?array $options = []) : array
 
 
 
 
 Combines the babyYaml files found in the given directory, and returns the resulting array.
 The target merge/replace syntax described above in this class comments applies.
+
+
+Available options are:
+
+- preLazyVars: array of lazyVarItems, each of which:
+     - 0: bdot key
+     - 1: value
+     - 2: filename (for debugging)
+
+     If this option is defined, will inject the given lazy var items with the built service configuration BEFORE
+     the lazy var regular resolution.
 
 
 
@@ -32,6 +43,10 @@ Parameters
 
 
 - directory
+
+    
+
+- options
 
     
 
@@ -55,7 +70,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [SicFileCombinerUtil::combine](https://github.com/lingtalfi/SicTools/blob/master/Util/SicFileCombinerUtil.php#L355-L494)
+See the source code for method [SicFileCombinerUtil::combine](https://github.com/lingtalfi/SicTools/blob/master/Util/SicFileCombinerUtil.php#L372-L483)
 
 
 See Also
@@ -63,5 +78,5 @@ See Also
 
 The [SicFileCombinerUtil](https://github.com/lingtalfi/SicTools/blob/master/doc/api/Ling/SicTools/Util/SicFileCombinerUtil.md) class.
 
-Previous method: [setEnvironmentVariables](https://github.com/lingtalfi/SicTools/blob/master/doc/api/Ling/SicTools/Util/SicFileCombinerUtil/setEnvironmentVariables.md)<br>
+Previous method: [setEnvironmentVariables](https://github.com/lingtalfi/SicTools/blob/master/doc/api/Ling/SicTools/Util/SicFileCombinerUtil/setEnvironmentVariables.md)<br>Next method: [injectLazyVars](https://github.com/lingtalfi/SicTools/blob/master/doc/api/Ling/SicTools/Util/SicFileCombinerUtil/injectLazyVars.md)<br>
 
