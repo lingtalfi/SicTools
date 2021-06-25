@@ -67,6 +67,7 @@ class HotServiceResolver
     public function getService(array $sicBlock)
     {
         if (true === SicTool::isSicBlock($sicBlock, $this->passKey)) {
+
             $service = null;
 
             //--------------------------------------------
@@ -88,7 +89,7 @@ class HotServiceResolver
 
                     $isCustomNotation = false;
                     $customNotation = $this->resolveCustomNotation($className, $isCustomNotation);
-                    if (false === $customNotation) {
+                    if (false === $customNotation || null === $customNotation) {
                         $service = new $className();
                     } else {
                         // assuming an object is returned
@@ -101,6 +102,7 @@ class HotServiceResolver
                     throw new SicBlockWillNotResolveException($e->getMessage());
                 }
             }
+
 
 
             //--------------------------------------------
