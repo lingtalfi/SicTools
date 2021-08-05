@@ -35,11 +35,19 @@ class HotServiceResolver
 
 
     /**
+     * This property holds the customResolveNotationCallback for this instance.
+     * @var callable|null
+     */
+    private $customResolveNotationCallback;
+
+
+    /**
      * Builds the HotServiceResolver instance.
      */
     public function __construct()
     {
         $this->passKey = '__pass__';
+        $this->customResolveNotationCallback = null;
     }
 
 
@@ -102,7 +110,6 @@ class HotServiceResolver
                     throw new SicBlockWillNotResolveException($e->getMessage());
                 }
             }
-
 
 
             //--------------------------------------------
@@ -193,6 +200,20 @@ class HotServiceResolver
         return false;
     }
 
+
+    /**
+     * Sets the customResolveNotationCallback.
+     *
+     * @param callable $customResolveNotationCallback
+     */
+    public function setCustomResolveNotationCallback(callable $customResolveNotationCallback)
+    {
+        $this->customResolveNotationCallback = $customResolveNotationCallback;
+    }
+
+
+
+
     //--------------------------------------------
     //
     //--------------------------------------------
@@ -223,7 +244,11 @@ class HotServiceResolver
      */
     protected function resolveCustomNotation($value, &$isCustomNotation = false)
     {
-        return null;
+        if (null !== $this->customResolveNotationCallback) {
+            return call_user_func_array($this->customResolveNotationCallback, [$value, &$isCustomNotation]);
+        } else {
+            return null;
+        }
     }
 
     //--------------------------------------------
